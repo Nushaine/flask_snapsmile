@@ -1,0 +1,20 @@
+table_name="Front Teeth"
+id = Id, primarykey
+image_name = string 
+image = BLOB
+bbox_coords = list
+confidence_scores: list
+
+table_name="Upper Teeth"
+id = Id, primarykey
+image_name = string 
+image = BLOB
+bbox_coords = list
+confidence_scores: list
+
+table_name="Lower Teeth"
+id = Id, primarykey
+image_name = string 
+image = BLOB
+bbox_coords = list
+confidence_scores: list

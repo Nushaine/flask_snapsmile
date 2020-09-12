@@ -1,0 +1,31 @@
+OLD /UPLOAD ROUTE (SINGLE IMAGES)
+@app.route('/upload', methods=['GET', 'POST'])
+def form():
+    imagesList = []
+
+    if request.method == "POST":
+        print('Sending Post Request 1')
+        if request.files:
+            print("reWUesT", request)
+            print("FILES", request.files)
+            print('Sending Post Request')
+            image = request.files["image"]
+            image.save(os.path.join(
+                app.config['UPLOAD_FOLDER'], 'new_file.jpg'))
+            results = testModel()
+            imagesList.append(results)
+            print(imagesList)
+            return render_template('test.html', data=imagesList[0][1])
+
+    return render_template('test.html')
+
+
+
+JUST AN EXTRA
+    {% if result %}
+      {% for img_path in result %}
+          <img src="./yolov5/inference/output/{{img_path}}" alt="tooth-image" />
+      {% endfor %}
+    {% else %}
+        No results :(
+    {% endif %}
