@@ -63,6 +63,7 @@ def form():
 def detections():
     if request.method == "POST":
         print(request.form)
+        print("REQUEst path", request.path)
         class_name = request.form['class']
         print("CLASS NAME ", class_name)
         full_path = os.path.join('yolov5/yolov5/inference/output/', class_name)

@@ -229,6 +229,10 @@ def train(hyp, tb_writer, opt, device):
         print('Starting training for %g epochs...' % epochs)
     # torch.autograd.set_detect_anomaly(True)
     for epoch in range(start_epoch, epochs):  # epoch ------------------------------------------------------------------
+        if epoch % 50 == true:
+            from google.colab import drive
+            drive.mount('/content/gdrive')
+            subprocess.call('%cp /content/yolov5/weights/last_yolov5s_results.pt /content/gdrive/My\ Drive')
         model.train()
 
         # Update image weights (optional)
